@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+<h1>form 태그</h1>
+<hr>
+<form action="" method="get">
+<!--id속성:html문서 내에서 고유한 이름을 붙이는 속성  -->
+<!--name속성:form태그를 이용해서 서버로 전송될 때 변수명으로 사용  -->
+<label>아이디 <input type="text" name="userid"
+ placeholder="아이디를 입력하세요" value="1234" id="uid" size="10"></label><br>
+<label for="pw">비밀번호</label> <input type="password" name="userpw" id="pw"
+placeholder="비밀번호를 입력하세요" value="hi" size="20"><br>
+
+<label for="chk">체크1</label><input type="checkbox" id="chk" name="chk" checked="checked" value="A">&nbsp;
+<label for="chk2"> 체크2</label>
+<input type="checkbox" id="chk2" name="chk" value="B">
+<input type="checkbox" id="chk3" name="chk3" value="B"><br>
+<!-- check박스는선택하지 않으면 아예 전달 파라미터를 생성하지 않음 -->
+<!-- value를 적용하지 않으면 선택된checkbox는 "on" 을 값으로 전달함 -->
+<!-- value값이 적용되어 있으면 선택된 checkbox는 value값을 전달함 -->
+<!-- name 속성이 같은 checkbox가 여러개 있어도 각각의 항목으로 전달함 -->
+<label><input type="radio" name="gender" value="m" >남</label>
+<label><input type="radio" name="gender" value="f">여</label>
+<label><input type="radio" name="gender" value="o" checked="checked">기타</label>
+<br><br>
+<!-- radio는 checkbox와 비슷한 동작을 한다 -->
+<!-- 선택된 항목의 값이  "on"으로 전달된다 -->
+<!-- value속성의 값을 넣으면 해당값으로 전달된다 -->
+<!-- name이 같인 radio는 중복선택이 안된다 -->
+<!-- name 이 같은 radio들은 같은 라디오그룹이라고 한다 -->
+<input type="button" name ="btn" value="확인" onclick="alert('알림! 확인했습니다.')" on>
+<br><br>
+<input type="submit" value="전송">
+<input type="reset">
+</form>
+</body>
+</html>
