@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<form action="#" method="get">
+<fieldset style="width:300px; height:290px;background-color: #FFCCCC; border:2px solid #FF9999" >
+<legend><h4>인적사항</h4></legend>
+<table align="center">
+<tr>
+<td>아이디</td>
+<td><input type="text" name=userId id=userId><br></td>
+</tr>
+
+<tr>
+<td>비밀번호</td>
+<td><input type="password" name="password" id="password"></td>
+</tr>
+
+<tr>
+<td>이메일</td>
+<td><input type="email" name="email" id="email"></td>
+</tr>
+
+<tr>
+<td>성별</td>
+<td><label for="m"><input type="radio" name="gender" value="m" id="m">남</label> <label for="f"><input type="radio" name="gender" value="f" id="f">여</label></td>
+</tr>
+
+<tr>
+<td>결혼여부</td>
+<td><input type="checkbox" name="married" id="married"></td>
+</tr>
+
+<tr>
+<td>지역</td>
+<td> <datalist name="location" id="location">
+	<option value="서울" >seoul</option>
+	<option value="경기" >gyeonggi</option>
+	<option value="전라" >geolla</option>
+	<option value="경상" >gyeongsang</option></datalist><input list="location"></td>
+</tr>
+
+<tr>
+<td>하고싶은말</td>
+<td><textarea name="textarea"  placeholder="입력하세요"></textarea></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"><input type="submit" value="제출">
+<input type="reset" value="취소"></td>
+
+</tr>
+</table>
+</fieldset>
+</form>
+</body>
+</html>

@@ -33,10 +33,63 @@ placeholder="비밀번호를 입력하세요" value="hi" size="20"><br>
 <!-- value속성의 값을 넣으면 해당값으로 전달된다 -->
 <!-- name이 같인 radio는 중복선택이 안된다 -->
 <!-- name 이 같은 radio들은 같은 라디오그룹이라고 한다 -->
-<input type="button" name ="btn" value="확인" onclick="alert('알림! 확인했습니다.')" on>
+<input type="button" name ="btn" value="확인" onclick="alert('알림! 확인했습니다.')" >
+<br><br>
+
+<!-- submit 버튼으로 생성됨 -->
+
+<button>버튼</button>
+<br><br>
+
+<!-- 파일 선택창-->
+<input type="file" name="f">
+<br><br>
+
+<!-- 다중 파일 선택창-->
+여러개 파일 선택: <input type="file" id="myfile" name="myfile" multiple="multiple"/>
+
 <br><br>
 <input type="submit" value="전송">
-<input type="reset">
+<input type="reset" value="초기화">
+
+NUMBER <input type="number" name="n" min="1"max="100" step="2" value="50"/>
+<br><br>
+<!-- 내용중에 @이 있어야함 -->
+EMAIL <input type="email" name="e"/>
+<br><br>
+<!-- 프로토콜과 경로 문자 확인 -->
+URL<input type="url" name="u"/>
+<br><br>
+<!--  범위값을 슬라이드바를 이용해 값을 조절함-->
+Range<input type="range" min=30 name="r" max="200" step="2" value="150">
+<br><br>
+<!-- 컬러 picker -->
+<!-- 16진수 펴현법으로 값이 전달된다 -->
+color<input type="color" name=c>
+<br><br>
+<!-- 날짜 picker -->
+Date<input type="date" name="d">
+<!-- 시간 picker -->
+<br><br>
+<!-- 시간 picker -->
+<!-- 전송 형태 : hh24:mi형식 -->
+TIME<input type="time" name="t">
+<br><br>
+<!-- --------------------------------------------- -->
+<!-- 데이터 목록 생성 태그 -->
+<!-- datalist 태그 단독으로는 화면에 나타나지 않음 -->
+<!-- input태그와 연결 해서 사용한다 -->
+<!--datalist태그의 id값을 input 태그의 list속성으로 연결한다  -->
+<datalist id="fruits">
+
+	<option value="apple">사과</option>
+	<option value="banana">바나나</option>
+	<option value="cherry">체리</option>
+</datalist>
+<label for="fr">과일</label>
+<input list="fruits" name="fruit" id="fr"/>
+<br><br>
+
 </form>
 </body>
 </html>
