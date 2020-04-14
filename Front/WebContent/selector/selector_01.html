@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {
+	/*모든태그에 기본 설정을 넣을때 사용하는 선택자  */
+	/*브라우저가 자동으로 넣어주는 css를 없앨때 사용한다  */
+	/*  해당 문서에서 사용할 기본 폰트스타일을 적용할때에도 사용한다*/
+	padding:0;/* 내부여백 없애기 */
+	margin:0;/* 외부여백 없애기 */
+
+	/*태그선택자  */
+}
+p {
+	padding:10px;
+	/*외부여백 상 좌우 하 */
+	margin:5px 20px 30px;
+	/*배경지정,색상만 지정하면 background-color가 지정된다  */
+	/* background: yellow; */
+	/* background-color: tomato; */
+	/* background-image: url("../file/chicken.jpg"); */
+	/* 글자색상  */
+	color:#0f0;
+	
+	
+}
+body{
+	background-image:url("../file/chicken.jpg");
+	/* 크기 단위로 지정하기-배경 이미지의 너비,높이 값을 지정한다 */
+	/*contain -배경이미지의 너비를 요소의 너비로 맞춤  */
+	/* cover-배경이미지의 높이를 요소의 높이로 맞춤(너비는 비율로)*/
+	background-size: 600px 400px;
+	background-repeat: repeat;
+	/*repeat(기본값)-x축(좌우),y축(상하)모두반복  */
+	/* no-repeat-반복하지 않음 */
+	/* repeat-x - x축만 반복 */
+	/*  repeat-y - y축만 반복*/
+}
+
+</style>
+</head>
+<body>
+<h1>선택자</h1>
+<hr>
+<p>p태그</p>
+<span>span태그</span>
+<div>
+	div태그
+	<p>div태그 내부의 p태그</p>
+	안녕</div>
+</body>
+</html>
