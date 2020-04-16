@@ -27,7 +27,8 @@ p {
 	
 }
 body{
-	background-image:url("../file/chicken.jpg");
+	background-color:#ddd;
+	/* background-image:url('../file/chicken.jpg'); */
 	/* 크기 단위로 지정하기-배경 이미지의 너비,높이 값을 지정한다 */
 	/*contain -배경이미지의 너비를 요소의 너비로 맞춤  */
 	/* cover-배경이미지의 높이를 요소의 높이로 맞춤(너비는 비율로)*/
@@ -39,6 +40,25 @@ body{
 	/*  repeat-y - y축만 반복*/
 }
 
+span{
+	/*inline요소는 상하margin이 없다(반영되지 않는다)  */
+	/* margin:30px; */
+	margin:0 30px;
+	/* inline요소는  width,height 둘다 반영되지 않는다 */
+	width:100px;
+	height:100px;
+}
+
+div{
+	border:3px dotted black;
+	/*외부여백 상 좌우 하  */
+	margin:5px 20px 30px;
+	/*배경색 지정  */
+	background-color: #ccc;
+	/*글자색 지정  */
+	color:white;
+	
+}
 </style>
 </head>
 <body>
@@ -52,3 +72,12 @@ body{
 	안녕</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

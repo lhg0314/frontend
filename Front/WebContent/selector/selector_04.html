@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div#mydiv{/*id가  mydiv인 div태그 선택자, 띄어쓰기 x  */
+	color:#666;
+}
+/*div태그의 자손인id가 mydiv인 요소  */
+div #mydiv{
+	color:#666;
+}
+/*****************************************/
+/*div태그요소의 하위요소중에서 모든 ul태그 요소들 선택  */
+/* div ul{
+	border:1px solid #808;
+} */
+
+#mydiv ul{
+	border:1px solid #808;
+}
+/*id가 mydiv인 요소의 자식요소중에서 모든 ul태그 요소들 선택  */
+#mydiv>ul{
+	border:1px dotted tomato;
+}
+/*선택자들에세는 적용 우선순위가 있다  */
+/*자식 ,자손 선택자의 우선순위는 같다  */
+/*적용순위가 같은 선택자들을 나중에 작성한 코드가 반영된다  */
+
+
+</style>
+</head>
+<body>
+<div id="mydiv">
+
+<ul>
+	<li>1</li>
+	<ul>
+		<li>2</li>
+		<ul>
+			<li>2-1</li>
+			<li>2-2</li>
+		</ul>
+	</ul>
+</ul>
+
+</div>
+</body>
+</html>
