@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#wrap {
+	width:980px;
+	margin:0 auto;
+	text-align:center;
+	border:1px solid black;
+	
+}
+
+#wrap > div {
+	display: inline-block;
+	width:14.28%;
+	height:100px;
+}
+#wrap>div:nth-child(even) {
+	background:yellow;
+}
+#wrap>div:nth-child(odd) {
+	background:pink;
+}
+</style>
+</head>
+<body>
+<!--border없이  -->
+<!--background  -->
+<div id=wrap><!-- 980px -->
+	<div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div><div>G</div>
+</div>
+</body>
+</html>

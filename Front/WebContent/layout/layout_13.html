@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.box{
+	width:100px;
+	height:100px;
+	border:1px solid red;
+	color:#ccc;
+}
+.absolute{position: absolute;}
+
+#a1{
+	top:50px;
+	left:50px;
+	z-index:9999;
+}
+#a2{
+ bottom:100px;
+ right:100px;
+}
+#a3{
+	width:300px;
+	height: 300px;
+	background: yellow;
+	left:150px;
+	top:50px;
+}
+#a4{
+	background: blue;
+	z-index: 3333;
+	left:10px;
+	top:10px;
+}
+.relative{position:relative;}
+.fixed{position: fixed;
+	bottom:0;
+	right:0;}
+</style>
+</head>
+<body>
+<div id="a1" class="box absolute">절대위치 박스 1</div>
+<div id="a2" class="box absolute">절대위치 박스 2</div>
+<div id="a3" class="box absolute"><div id="a4" class="box absolute"></div></div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu sem ac ligula fermentum tristique nec ac felis. Integer sollicitudin neque a lorem hendrerit varius. Donec et pellentesque sem, maximus fringilla eros. Nunc consectetur hendrerit convallis. Duis est turpis, aliquam vel facilisis nec, pretium at ipsum. Aliquam vel purus id odio tincidunt dictum. In tincidunt, nunc at euismod ultrices, orci sapien condimentum metus, vitae porttitor neque arcu ac massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam ac nunc arcu. Morbi vitae vestibulum urna. Curabitur pellentesque lacus ut aliquet finibus. Aenean auctor pretium maximus. Suspendisse id vulputate purus.</p>
+<p>Integer quis malesuada risus. Sed turpis sem, volutpat nec ante eget, bibendum aliquam metus. Donec pellentesque enim quis accumsan sollicitudin. Maecenas condimentum congue nibh quis tincidunt. Mauris vitae efficitur sapien, sit amet euismod libero. Vestibulum justo mi, consectetur vel tristique vitae, sollicitudin a tellus. Morbi tellus purus, blandit blandit dictum sed, ornare vel ipsum. Nullam fringilla magna ut enim interdum efficitur. Curabitur ac tellus at lectus ullamcorper luctus. Integer ut nulla sed ligula aliquet vehicula nec vitae purus. Integer faucibus auctor risus, ac interdum erat venenatis eget. Cras vel enim placerat erat fermentum pulvinar nec quis eros. Nunc iaculis non diam nec ultrices. Donec rhoncus porta aliquam.</p>
+<p>Nam tempor ornare tellus vel dignissim. Aenean rhoncus et nisl id rhoncus. Nullam lobortis elit nunc, vel commodo justo dapibus in. Nunc dapibus mi et molestie vehicula. Duis molestie diam neque. Curabitur et consectetur neque. Praesent pulvinar, nunc sed porta pretium, urna eros fermentum tellus, et aliquet ipsum nisi quis nulla. Integer eu nisi rutrum risus malesuada bibendum.</p>
+<div class="box relative">상대위치 박스</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu suscipit sapien. Cras pretium risus ex, posuere consectetur orci pellentesque et. Cras cursus justo vitae placerat bibendum. Vestibulum in posuere nisi, at lobortis felis. Curabitur nisi lectus, auctor vitae dolor eget, consequat cursus nibh. Vestibulum faucibus nisi eu erat consectetur, quis semper tellus placerat. Suspendisse potenti. Maecenas iaculis iaculis iaculis. Sed auctor leo ut magna finibus porta. Proin id lacus condimentum, ultrices nibh et, auctor sapien.</p>
+
+<div class="box fixed">고정위치 박스</div>
+<div class="box relative">
+	<div class="box absolute">부모태그안 절대위치 박스</div>
+</div>
+AAA
+</body>
+</html>

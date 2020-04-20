@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+#wrap {
+	/*테이블처럼 레이아웃 설정됨  */
+	display:table;
+	/* 내용물의 크기가 일정하도록 지정 */
+	table-layout:fixed;
+	margin: 0 auto;
+	width:980px;
+}
+
+#wrap div{
+	
+	height:150px;
+	/*  테이블의 내용물처럼 레이아웃 설정됨*/
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+#wrap>div:nth-child(even) {
+	background:yellow;
+}
+#wrap>div:nth-child(odd) {
+	background:pink;
+}
+</style>
+</head>
+<body>
+<!--border없이  -->
+<!--background  -->
+<div id=wrap><!-- 980px -->
+	<div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div><div>G</div>
+</div>
+
+<hr>
+<table border="1">
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>4</td>
+		
+	</tr>
+</table>
+</body>
+</html>
