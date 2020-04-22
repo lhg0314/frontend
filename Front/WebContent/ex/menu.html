@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+
+
+.nav{
+	list-style-type: none;
+	/* 기본여백 제거하기
+	 */
+	padding:0;
+	margin:0 0 0 40%;
+	
+}
+/* 메뉴 항목 영역 */
+.nav > li{
+	/* 수평으로 일렬로 배치하기 */
+	float:left;
+	padding:20px 0;
+	line-height: 40px;
+	background: #aca;
+	border-right: 1px solid white;
+	/*내용물이 <li>항목보다 크면 보이지 않도록 잘라내기  */
+/* 	overflow:hidden; */
+	
+	/* 외부여백 링크클릭 안되는 영역, 다른 a와 구분되도록 만든다 */
+	margin:0 1px;
+	/* 자식요소의 기준위치로 설정하기 */
+	position:relative;
+	padding:10px 15px;
+	z-index: 999;
+	
+}
+.nav>li>a{
+	color:white;
+	text-decoration: none;
+	
+	font-family: "돋움",dotum,sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	transition:color 1s;
+}
+.nav>li>a:hover{
+	color:green;
+	
+}
+.nav > li> ul{
+	/*Html 계층구조에서 빼는 설정  */
+	/* 부모요소인 li태그의 컨텐츠영역을 차지하지 않도록 만들기 */
+	position:absolute;
+	/* 서브메뉴의 위치 조절 */
+	left:0;
+	list-style-type: none;
+	padding:0;
+	margin-top:10px;
+	width:200px;
+	
+	
+	
+	
+}
+.nav > li >ul >li{
+	background: #999;
+	/* 서브메뉴는 평소에 안보이도록 설정하기 */
+	/* 방법1.display하지 않는다 */
+/* 	display: none; */
+	/* 방법2.내용물의 글자크기 높이를 모두0 으로 한다 */
+ 	line-height:0;
+	height:0;
+	font-size:0; 
+	padding-left:10px;
+	
+	
+	
+	
+	
+}
+.nav>li:hover>ul>li{
+	/* 방법1에 대한 처리 */
+	/* display:list-item; */
+	/*방법 2에대한 처리  */
+	line-height:40px;
+	height: 40px;
+	font-size: 20px;
+	transition:height 2s;
+	
+	
+}
+/* 서브메뉴의 링크 텍스트 */
+.nav>li>ul>li>a{
+	background: #ccc;
+	color:#333;
+	text-decoration:none;
+	display:block;
+	margin:1px;
+}
+.nav>li>ul>li>a:hover {
+	color:white;
+	background-color:green;
+	
+	transition:color 1s,background-color 3s;
+
+	
+}
+
+</style>
+</head>
+<body>
+<h2 style="color:green ;text-align:center;">2depth메뉴</h2>
+<hr>
+
+
+<ul class="nav">
+	<li><a href="#">Home</a></li>
+	<li><a href="#">웹개발팀</a>
+	<ul>
+		<li><a href="#">웹디자이너</a></li>
+		<li><a href="#">웹퍼블리셔</a></li>
+		<li><a href="#">웹개발자</a></li>
+		<li><a href="#">웹엔지니어</a></li>
+	</ul></li>
+	
+	<li>
+		<a href="#">게시판</a>
+		<ul>
+			<li><a href="#">공지사항</a></li>
+			<li><a href="#">자유게시판</a></li>
+		</ul>
+	</li>
+	<li><a href="#">문의하기</a></li>
+	
+</ul>
+
+</body>
+</html>

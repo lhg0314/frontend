@@ -7,6 +7,27 @@
 li{
 	list-style: none;
 }
+.imgBox{
+
+	width:320px;
+	height:260px;
+	border:1px solid #ccc;
+	text-align: center;/* 내부정렬  */
+	padding: 10px;
+	position:relative;
+	left:100px;
+	/* 요소의 그림자 설정 속성 */
+	-webkit-box-shadow: 5px 5px 10px 0px #999;
+	-moz-box-shadow: 5px 5px 10px 0px #999;
+	box-shadow: 5px 5px 10px 0px #999;
+	/* box-shadow:x축이동 y축이동 흐려짐 펼치기 색상; */
+	-moz-transform:rotate(5deg);
+	-webkit-transform:rotate(5deg);
+	-ms-transform:rotate(5deg);
+	-o-transform:rotate(5deg);
+	transform:rotate(5deg);
+	
+}
 </style>
 </head>
 <body>
@@ -33,7 +54,7 @@ li{
 	<div class="imgBox">
 		<img src="../file/bell.png" width="200" height="200">
 		<br>
-		section태그 안에article태그로 표현하고있음
+		section태그 안에 article 태그로 표현하고 있음!
 	</div>
 </article>
 </section>
