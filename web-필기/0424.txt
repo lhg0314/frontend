@@ -1,0 +1,32 @@
++0424
+ 
+ +JS형변환
+
+ -자동 형변환
+
+	Number + String-> String
+	ex) 123+"HELLO"->"123HELLO"
+
+	Boolean+String->String
+	ex) true+"hi"->"truehi"
+
+	Boolean+Number->Number
+	ex) true+5-->6
+	    true+true+5-->7
+	    (true==1,false==0)
+
+
+ -강제 형변환
+ 
+	문자->숫자
+
+	parseInt("숫자형태")
+	parseFloat("숫자형태")
+	Number("숫자형태")
+
+	숫자->문자
+	
+	String(숫자)
+	숫자데이터.toString(n)
+	숫자데이터.toFixed(n)
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#myform{
+background:green;
+
+width:700px;
+
+}
+div{
+border:1px solid white;
+border-radius: 2px;
+width:500px;
+margin:0 auto;
+padding:10px;
+text-align: center;
+}
+#mybtn{
+color:white;
+background-color: green;
+border-radius: 10px;
+margin:20px;
+
+}
+.c1{
+display:table;
+table-layout: fixed;
+
+}
+.c2{
+display: table-cell;
+}
+</style>
+</head>
+<body>
+<h1>css3</h1>
+<form action="" method="get" id="myform">
+<p>step1:로그인 정보</p>
+<div>
+<span class="c1">아이디</span><span class="c2"><input type="text"></span>
+</div>
+<div>
+<span class="c1">비밀번호</span> <span class="c2"><input type="password"></span>
+</div>
+<div>
+<span class="c1">비밀번호 확인</span><span class="c2"><input type="password"></span>
+</div>
+<div>
+<span class="c1">회원 등급</span><span class="c2"><input type="text" value="준회원"></span>
+</div>
+<p>step2:개인정보</p>
+<div><span class="c1">이름</span><span class="c2"><input type="text"placeholder="5자 미만 공백없이"></span></div>
+<div><span class="c1">메일주소</span><span class="c2"><input type="email"placeholder="abcd@domain.com"></span></div>
+<div><span class="c1">연락처</span><span class="c2"><input type="text"></span></div>
+<p>step3:코딩 숙련도(상,중,하)</p>
+<div><input type="range"></div>
+<input type="submit" value="제출" id="mybtn">
+</form>
+</body>
+</html>
