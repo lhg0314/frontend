@@ -1,0 +1,54 @@
+0428
+ +타이머함수
+ -setInterval(func,millis):timerid
+	지정된 밀리초마다 func함수를 반복적으로 실행한다
+	타이머 객체의 id를 반환한다
+
+ -setTimeout(func,millis):timerid
+	지정된 초 이후 func함수를 한번실행한다
+	타이머객체의 id를 반환한다
+
+ -clearInterval(timerid):undefined
+	지정된 태이머객체를 즉시 종료시킨다
+
+ +자바스크립트 핵심요소 4가지
+ 
+ 1.자바스크립트 Core 문법
+	기본문법
+	데이터타입,변수,제어문,함수,...
+	클래스,객체,프로토타입,...
+	내장객체
+	String,Number,Object,Math,Date,....
+
+ 2.Bom,Brower Object Model,브라우저 객체모델
+	웹브라우저 창과 자바스크립트가 상호작용하기
+	위한 수단으로 제공되는 객체들
+	
+	window객체
+	-Bom객체들의 최상위 객체
+	-브라우저의 전반적인 기능을 관리하는 객체
+	-자바스크립트로 정의한 모든 전역변수,함수,객체들을
+	프로퍼티(property,속성,멤버필드)로 가지고있다
+	-window. 생략하고 사용할수 있다
+
+
+	navigator 객체
+	-브라우저 정보,운영체제의 정보를 제공하는 객체
+	location객체
+	-URL과 관련된 인터넷주소 정보 객체
+	history객체
+	-사용자의 방문기록 관련 객체
+	-인터넷 사용기록 관련객체
+	screen객체
+	-사용자의 모니터 정보 관련 객체
+	document객체
+	-웹문서,웹페이지 문서 관련객체
+	-<body>태그에 작성될 내용을 관리하는 객체
+	-<body>태그 포함되는 태그들을 관리한다
+
+ 3.Dom,Document Object Model
+	document객체를 이용한 문서 객체 모델
+	화면에 보여지는 모든 요소를 객체화 시키는것
+
+ 4.Event
+	

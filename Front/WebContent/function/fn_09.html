@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+/* var tid=setInterval(function(){
+	
+	var now=new Date()
+	console.log("현재시간은 "+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds())
+	//날짜만 출력하는 메소드-toDateString()
+	//console.log(now.toDateString())
+	//시간만 출력하는 메소드-toTimeString()
+	console.log(now.toTimeString())
+},1000)
+
+
+setTimeout(function(){
+	clearInterval(tid)
+	
+},10000) */
+
+ var tid=setInterval(function(){
+
+var now=new Date()
+time.innerHTML=+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()
+
+time.innerHTML+="<br>"+now.getHours()+"시"+now.getMinutes()+"분"+now.getSeconds()+"초"
+//날짜만 출력하는 메소드-toDateString()
+//console.log(now.toDateString())
+//시간만 출력하는 메소드-toTimeString()
+//console.log(now.toTimeString())
+},1000)
+
+
+setTimeout(function(){
+clearInterval(tid)
+
+},10000) 
+</script>
+</head>
+<body>
+<div id="time"></div>
+</body>
+</html>

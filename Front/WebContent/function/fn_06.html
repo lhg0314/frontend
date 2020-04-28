@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var result;
+function add(n1,n2){
+	
+	result=n1+n2;
+}
+
+function print(){
+	console.log(result)
+}
+add(100,200)
+print()
+
+console.log("------------")
+//콜백함수
+//직접 호출해서 동작하는 함수가 아닌
+//외부의 동작에 의해서 실행되는 함수
+//남이 호출해주는 함수
+
+function sum(n1,n2,callback){
+	var res=n1+n2;
+	callback(res);
+}
+function display(data){
+	console.log("결과값: "+data);
+}
+//콜백함수를 전달하며 호출하기
+sum(11,22,display)
+
+console.log("----------")
+
+function alertResult(data){
+	
+	alert("결과값은"+data+"입니다.")
+}
+
+sum(111,222,alertResult)
+
+//익명함수로 callback전달하기
+sum(555,666,function(data){
+	document.write("<h1>"+data+"</h1>");
+})
+
+var write=function(data){document.write("<h1>"+data+"</h1>");}
+
+sum(888,999,write)
+</script>
+</head>
+<body>
+
+</body>
+</html>

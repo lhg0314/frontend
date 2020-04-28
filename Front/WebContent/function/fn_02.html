@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+/* 	function 함수이름(매개변수1,매개변수2,...){
+		실행코드
+		return 반환값
+	}
+	**매개변수의 데이터타입과 반환 데이터타입을 별도로 명시하지 않는다
+	//-----------------------------------------
+	var res=함수이름(전달인자1,전달인자2,...);
+//---------------------------------- */
+function hello(){
+	console.log("hello");
+}
+
+var f=hello;//변수로 함수 호출가능
+var res=hello();//함수 호출 결과 저장
+
+console.log("---f---")
+console.log(f)
+console.log("---res---")
+console.log(res)
+console.log("---------")
+
+var func=function(data1,data2){
+	console.log(data1+":"+data2)
+	return data1+data2;
+}
+var result=func(1,2)
+console.log(result)
+
+var result2=func("Alice",100)
+console.log(result2)
+var res1=func()//매개변수 2개중 하나도 전달하지 않기
+console.log(res1)//NaN반환함
+console.log(undefined+undefined)//undefined+undefined=NaN이 나옴
+
+var res2=func(10)//매개변수 2개중 하나만 전달하기
+console.log(res2)
+//매개변수에 전달인자를 전달하지 않으면 undefined로 처리된다
+
+var res2=func(10,20,30,40)
+console.log(res2)
+//매개변수보다 많은수의 전달인자는 무시한다
+
+function fff(){
+	
+	return [1,2,3,4,5];
+}
+function ffff(){
+	
+	return {"A":1,"B":2,"C":3,"D":4,"E":5};
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

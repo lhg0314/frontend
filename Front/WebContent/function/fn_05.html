@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var num=111;//전역변수
+//전역변수를 이용한 계산
+function fn1(){
+	num+=11;
+}
+
+//전역변수를 이용한 출력
+function fn2(){
+	console.log(num)
+}
+
+function hello(){
+	var num=222;//지역변수
+	console.log(num);
+	//내부함수
+	function inner(){
+		
+		var num=333;
+		console.log(num)
+	}
+	
+	inner()
+	
+}
+fn1()
+fn2()
+hello()
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

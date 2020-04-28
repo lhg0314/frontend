@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var data;//변수 선언
+console.log(data);
+
+//console.log(ddd);//선언하지 않은 변수
+console.log("--------");
+if(data==undefined){
+	console.log("data변수가 초기화되지 않았습니다.")
+	
+}
+
+if(data==null){
+	
+	console.log("data변수가 null이다");
+	console.log("참조대상이 없습니다.");
+}
+if(!data)
+{
+	console.log("data의값이false");
+	}
+if(!undefined)
+{
+	console.log("data의값이false");
+	}
+
+console.log("---------");
+
+console.log("data==false의 결과:");
+console.log(data==false);
+
+console.log("----------")
+
+if(data===undefined){
+	
+	console.log("===연산,data변수가 초기화되지 않았음");
+}
+if(data===null){
+	
+	console.log("===연산,data변수가 참조하고있는대상이 없음");
+}
+
+//==,기호 두개짜리 연산-abstract Equality
+//명세서에 정의되어잇는 순서에 따라 비교연산을 수행한다
+//데이터타입이 달라도 비교결과가 나온다(결과는명세서 확인해야함)
+//===기호,세개짜리 동등비교연산 -Strict Equality
+//데이터타입이 같은지 먼저 검사하고 데이터타입이 같아야만 비교함
+//데이터타입이 다르면 무조건 false
+
+console.log("--------------")
+console.log(!undefined);
+console.log(!null);
+//!연산자를 사용하면 true가 반환되는 데이터
+//false,null,undefined,NaN,0,"",..
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

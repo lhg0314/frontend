@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var cnt=0;
+function countUp(){
+	return ++cnt;
+}
+
+console.log(countUp());
+console.log(countUp());
+console.log(countUp());
+console.log(countUp());
+console.log(countUp());
+
+console.log("----------------------")
+
+function countUp2(){
+	var cnt2=0;
+	return ++cnt2;
+}
+
+console.log(countUp2());
+console.log(countUp2());
+console.log(countUp2());
+console.log(countUp2());
+console.log(countUp2());
+
+console.log("---------------------")
+
+function countUp3(){
+	var cnt3=0;//종속되는 순간 free variable이 된다
+	return function(){
+		return ++cnt3
+	}
+}
+
+
+var cnt3=countUp3();
+console.log(cnt3());
+console.log(cnt3());
+console.log(cnt3());
+f=null;//참조대상 없애기
+
+
+//클로조
+//함수 스코프의 외부로 반환된 내부함수가
+//자신이 선언되었을 때의 스코프를 기억하는것
+//함수 스코프가 종료되었더라도 클로저 함수를 호출하면
+//클로저함수가 선언되었을 때 만들어진 스코프에 접근할수 있다
+
+//클로저함수에 의해 접근할수 있는 변수를  자유변수
+//이라고 한다
+//자유변수는 새롭게 만들어진 것이 아니라 최초의 변수공간을
+//계속 사용하는 것이므로 값의 변화가 적용되고, 최신값으로 유지된다
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
