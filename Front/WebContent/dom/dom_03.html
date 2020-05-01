@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	var img=document.createElement("img");
+	console.log(img)
+	
+	
+	//이미지 경로삽입
+	img.src="../file/bell.png";
+	//이미지 너비속성
+	img.width="300";
+	//이미지 높이설정
+	img.style.height="200px";
+	//<body>태그에 <img>태그 추가하기(화면에 보임)
+	var body=document.body;
+	body.appendChild(img)
+	
+	
+	//----------------------------
+	console.log("-----------속성값 가져오기--------")
+	console.log(img.src)
+	console.log(img.width)
+	console.log(img.height)
+	
+	//------------------------------
+	//비표준 속성 설정하기
+	img.setAttribute("myAttr","Apple")
+	//비표준 속성에 반응하지 않는다
+	img.myAttr="Banana"
+	console.log(img.getAttribute("myAttr"))
+	//-------------------------------
+	console.log(img.getAttribute("src"));
+	img.setAttribute("id","myImg")
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

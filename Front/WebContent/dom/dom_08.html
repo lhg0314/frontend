@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	
+	var form=document.getElementById("myform")//아이디 이용선택
+	var data1=document.getElementsByName("data1")//name속성 이용선택
+	console.log(form)
+	console.log(data1)
+	
+	//form태그의 자식요소인 input[name='data1']을 제거한다
+	form.removeChild(data1[0])
+	//document.getElementsByName("data2")[0].value="test"
+	//""이 아닐때
+	if(document.getElementsByName("data2")[0].value!=""){
+		//자바스크립트 코드를 이용한 form제출(submit)
+	    //form.submit()
+		
+	}else{//아무것도 작성하지 않았을때
+		//alert("data2를 채우세요!")
+		
+	}
+	
+//--------------------------------------------
+	var r=document.getElementsByName("r")
+	console.log(r)
+	
+	//선택된 항목으로 지정하기
+	r[1].setAttribute("checked","checked")
+	
+	//-------------------------------------------
+	
+	var c=document.getElementsByName("c")
+	console.log(c)
+	//c[0].setAttribute("checked","checked")
+	//c[1].setAttribute("checked","checked")
+	//c[2].setAttribute("checked","checked")
+	
+	for(var i=0;i<3;i++){
+		
+		c[i].setAttribute("checked","checked")
+	}
+}
+</script>
+</head>
+<body>
+<h1 id="test">form 테스트</h1>
+<hr>
+<form action="#" method="get" id="myform">
+<input type="text" name="data1"><br>
+<input type="text" name="data2" ><br>
+
+<input type="radio" name="r" value="A">
+<input type="radio" name="r" value="B">
+<input type="radio" name="r" value="C"><br><br>
+
+<input type="checkbox" name="c" value="E">
+<input type="checkbox" name="c" value="F">
+<input type="checkbox" name="c" value="G">
+
+<input type="submit">
+
+</form>
+</body>
+</html>

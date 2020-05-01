@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//Content 텍스트 밑에 ul추가하기
+window.onload=function(){
+	
+	var con=document.getElementById("content")
+	con.innerHTML+="<ul id='u'></ul>"
+	var u=document.getElementById("u")
+	u.innerHTML+="<li>Javascript</li>"
+	u.innerHTML+="<li>Dom</li>"
+	u.innerHTML+="<li>innerHTML</li>"
+	
+	
+	var content=document.getElementById("content2")
+	var p="";
+	p+="<ul><li>Javascript</li><li>DOM</li><li>innerHTML</li></ul>"
+	content.innerHTML+=p;
+	
+//-----------------------------------------------------------------------	
+ var u3=document.createElement("ul")
+ 
+ var li1=document.createElement("li")
+ var txt1=document.createTextNode("Javascript")
+ li1.appendChild(txt1)
+ 
+ var li2=document.createElement("li")
+ var txt2=document.createTextNode("Dom")
+ li2.appendChild(txt2)
+ 
+ var li3=document.createElement("li")
+ var txt3=document.createTextNode("innerHTML")
+ li3.appendChild(txt3)
+ 
+ u3.appendChild(li1)
+ u3.appendChild(li2)
+ u3.appendChild(li3)
+ 
+ document.getElementById("content3").appendChild(u3)
+ 
+	
+}
+</script>
+</head>
+<body>
+<div id="content">CONTENT</div>
+<hr>
+<div id="content2">CONTENT2</div>
+<hr>
+<div id="content3">CONTENT3</div>
+</body>
+</html>
