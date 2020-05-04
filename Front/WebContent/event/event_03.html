@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload=function(){
+	
+	//이벤트 리스너 등록:addEventListener
+	//이벤트리스너 해제:removeEventListener
+	
+	//-----------익명함수로 같은 코드를 작성해도 같은 함수가 아님--
+	//removeEventListener동작하지 않음
+	//->익명함수가 아닌 함수를 따로 정의해서 사용해야함
+/* 	btnOk.addEventListener("click",function(){
+		alert("확인버튼 클릭됨")
+	})
+	btnOk.removeEventListener("click",function(){
+		alert("확인버튼 클릭됨")
+	}) */
+	
+	//따로 정의한 함수를 등록한다
+	btnOk.addEventListener("click",clicked)
+	
+	btnTest.addEventListener("click",function(){
+		btnOk.removeEventListener("click",clicked)
+	})
+	//---------------------------------
+	//전역함수 작성해서 등록할것
+	//
+	btnTest.addEventListener("mouseenter",over)
+	btnTest.addEventListener("mouseleave",out)
+	
+
+}
+
+function over(){
+	btnTest.style.color="red"
+}
+
+function out(){
+	btnTest.style.color="black"
+}
+//전역함수로 함수 정의
+function clicked(){
+	alert("확인버튼 클릭 !!!")
+}
+</script>
+</head>
+<body>
+<button id="btnOk">확인버튼</button>
+<button id="btnTest">테스트 버튼</button>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#first, #second {
+	width: 80px;
+}
+
+#cor, #nocor {
+	width: 50px;
+}
+
+#result {
+	width: 90px;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	
+	first.style.width="100px"
+	second.style.width="100px"
+	result.style.width="100px"
+	cor.style.width="50px"
+	nocor.style.width="50px"
+	
+	
+	makerandom()
+	
+	btnOk.addEventListener("click",getresult)
+}
+
+function getresult(){
+	if(first.value*second.value==result.value){
+		alert("정답입니다")
+		result.value=""
+		cor.value++
+		makerandom()
+	}else{
+		alert("땡~오답입니다")
+		result.value=""
+		nocor.value++
+		makerandom()
+	}
+}
+
+function makerandom(){
+	first.value=Math.floor(Math.random()*8+2)
+	
+	second.value=Math.floor(Math.random()*9+1)
+}
+</script>
+</head>
+<body>
+<h1>구구단 퀴즈</h1>
+
+<hr>
+<input type="text" id= first readonly="readonly"> x<input type="text" id="second" readonly="readonly"><br><br>
+=<input type="text" id=result> <input type="button" id="btnOk" value="결과확인"><br><br>
+정답수: <input type="text" readonly="readonly" id="cor" value=0><br>
+오답수: <input type="text" readonly="readonly" id="nocor"  value=0>
+</body>
+</html>

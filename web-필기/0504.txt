@@ -1,0 +1,145 @@
+ 0504
+
+
+ +JS 이벤트,js event
+
+ -사용자의 모든 입력들을 프로그램에서 미리 정의해놓은 객체
+
+ -사용자의 입력 뿐만 아니라 특정 사건도 포함한다
+
+ -컴퓨터에서 발생한 이벤트를 감지하고 해당 이벤트를 
+ 이벤트가 발생한 응용프로그램에게 전달한다
+
+ -전달된 이벤트는 해당 응용 프로그램에서 적절한 처리를 수행한다
+ -이벤트 기반처리
+
+ +js기본이벤트 
+ -태그 요소에 별도로 이벤트 처리 코드를 연결하지 않아도
+ 기본적으로 실행되는 이벤트들
+
+ -<a>요소를 클릭
+    지정된 경로로 페이지 이동(location.href="지정경로")
+
+ -브라우저 화면에 마우스 우클릭
+	메뉴 보여주기
+
+ -<form>태그에서 submit 버튼을 클릭했을때
+	action에 지정된 경로로 데이터를 전달하면서 페이지 이동 발생
+	(폼태그.submit())
+
+ +주요이벤트
+
+ ----마우스 이벤트----
+
+ -  click	마우스를 클릭했을때
+ - dbclick	마우스를 더블클릭 했을때
+ - mousedown	마우스 버튼을 눌렀을때
+ - mouseup	마우스 버튼을 뗐을때
+ - mousemove	마우스 포인터를 이동했을때
+ - mouseenter	마우스 포이터가 요소위로 올라갔을 때
+ - mouseleave 	마우스 포인터가 요소밖으로 나갔을때
+	(mouseover,mouseout:자식요소까지 포함해서 판단)
+
+ 
+ ----키보드 이벤트----
+
+ -keydown	키보드를 눌렀을때(한번)
+
+ -keyup		키보드에서 손을 뗐을때
+
+ -keypress	키보드를 눌렀을때(연속)
+
+	**이벤트 발생순서
+
+	1.keydown
+	2.keypress
+	3.keyup
+
+	**keypress는 alt,ctrl,shift,esc같은 가상키에 반응안함
+	**keydown은 모든키에 반응함
+
+ ---- 폼 이벤트----
+
+ -sumit		폼이 체출되었을때(제출버튼 눌렀을때)
+ -reset		폼이 초기화 되었을때(초기화버튼 눌렀을때)
+ -focus		특정요소에 입력포커스가 들어갔을때
+ -blur		포커스를 잃었을때
+
+ -change	폼필드(폼의 자식요소)에 변화가 발생했을때
+ -select 	<select>태그의 항목을 선택했을때
+
+  ----윈도우(창) 이벤트----
+
+ -load		HTML문서 또는 요소가 불러와졌을때(메모리에 로드됐을때)
+ -resize	요소 크기(윈도우의 크기)가 변경되었을때
+ -scroll	페이지 스크롤이 이동되었을때
+
+
+ +js event처리 코드 작성하는 방법
+ -이벤트가 발생하면 해당이벤트에 알맞은 동작을 수행할수 있도록
+  코드를 작성해 둬야한다
+
+ -이벤트 처리코드 == 이벤트 핸들러(handler)==이벤트 리스너
+ -이벤트가 발생했을때 그 상황에 맞워 동작할 코드
+ 
+
+ 1.HTML태그의 이벤트 속성을 이용한 인라인 방식으로 등록하기
+
+	ex)	<button onclick="alert('clicked')">확인</button>
+	ex)	<div onmousemove="console.log('moved')">하하하</div>
+
+ 2.Dom을 이용한 이벤트 리스너 바인딩 - 1(Event Attribute 사용)
+	ex)	<button id="btnOk">확인</button>
+		<script>
+		...생략...
+		btnOk.onlick=function(){
+		 alert("확인")
+		}
+
+		btnOk.onmousemove=fn;
+
+		function fn(){
+		 console.log("마우스움직임")
+		}
+
+		...생략...
+		</script>
+
+ 3.Dom을 이용한 이벤트 리스너 바인딩 -2 (Event API 함수 사용)
+	이벤트 발생객체.addEventListener("이벤트이름",콜백함수)
+	ex)	btnTest.addEventListener("click",function(){
+		alert("테스트")
+	})
+
+	이벤트 발생객체.removeEventListner("이벤트 이름",콜백함수)
+	
+	**removerEventListener의 두번째 인자로 전달되는 콜백함수는 
+	addEventListener에서 사용한 함수와 같아야 하므로 함수를 전역함수로 
+	정의해 놓는 것이 좋다
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
