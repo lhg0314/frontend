@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 var $div=$("<div>");
+	 var $myDiv=$("#myDiv")
+	 $myDiv.append($div)
+	 $div.html("TEST")
+	 
+	 //--------------------------------------------
+	 var $newDiv=$("<div>")
+	 	.append($("<ul>")
+	 				.append($("<li>").html("하이"))
+	 				.append($("<li>").html("헬로")))
+	 	.append($("<ul>")
+	 				.append($("<li>").html("hi"))
+	 				.append($("<li>").html("hello")))
+	 console.log($newDiv)
+	 $myDiv.append($newDiv)
+	 //---------------------------------------------
+	 
+	 var $cloneDiv=$newDiv.clone()
+	 console.log($cloneDiv)
+	 
+	 $myDiv.append($cloneDiv)
+	 
+	 //---------------------------------------------
+	 $("<div>")
+	 	.append($("<ul>")
+	 			.append($("<li>").html("하이하이하이"))
+	 			
+	 	).appendTo($("#myDiv"))
+	 	
+	//----------------------------------------------
+	//이미 DOM TREE에 추가된 노드는 이동된다
+	$(document.body).append($div)
+	//$(document.body)
+	//js DOM객체인 document.body를 
+	//jQuery DOM객체로 변환한것
+	//	-> <body>태그를 뜻함
+	
+	
+ })
+ </script>
+</head>
+<body>
+<div id="myDiv">
+	<p>안녕</p>
+</div>
+</body>
+</html>

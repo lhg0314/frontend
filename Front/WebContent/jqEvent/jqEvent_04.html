@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ 
+ //전송누르면 alert띄우기
+ //엔터누르면 alert띄우기
+ $(document).ready(function(){
+	 var msg=$("input[name ~='msg']").attr("value")
+	 $("#btnSend").on("click",function(){
+		 var msg=$("input").val()
+		 alert(msg)
+		 
+	 })
+	 
+	 $("input").on("Keydown",function(){
+		 
+		 $("#btnSend").alert($("input").val())
+	 })
+ })
+ </script>
+</head>
+<body>
+<div>
+	<input type="text" name="msg">
+	<button id="btnSend">전송</button>
+</div>
+</body>
+</html>

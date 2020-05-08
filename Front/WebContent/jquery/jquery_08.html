@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 $("#mydiv").prepend($("<h1>").text("PREPEND TEST"))
+	 
+	 //#mydiv의 자식요소가 두 개
+	 //$("#mydiv").children()- <h1>,<ul>
+	 $("<li>").text("영").prependTo($("#mydiv").children())
+	 
+	 $("#mydiv").before($("<p>").text("jquery 어렵다"))
+	 $("#mydiv").after($("<p>").text("ㅠㅠ"))
+ })
+ </script>
+</head>
+<body>
+<div id="mydiv">
+<ul>
+	<li>하나</li>
+	<li>둘</li>
+	<li id="third"> 셋</li>
+	<li>넷</li>
+	<li>다섯</li>
+</ul>
+</div>
+
+
+</body>
+</html>

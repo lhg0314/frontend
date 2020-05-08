@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 var $mydiv=$("#mydiv")
+	 
+	 //기존에 가지고 있던 내용물을 전부 덮어씌운다
+	 $mydiv.html("<h3>HTML div</h3>")
+	 //innerHTML내용물을 읽어서 변수에 저장하기
+	 var h=$mydiv.html()
+	 console.log(h)
+	 
+	 //변수에 새 DIV구문 텍스트 추가
+	 h+="<div>insertNode</div>"
+	 
+	 console.log(h)
+	 //최종 HTML텍스트를 #mydiv에 반영하기
+	 $mydiv.html(h)
+	 
+	 var $p=$("<p>")
+	 //내부에 텍스트 추가하기
+	 $p.text("새로만든 p태그입니다")
+	 //#mydiv에 새로만든 p 태그 추가하기
+	 $mydiv.append($p)
+	 //------------------------------
+	 //태그가 반영된다
+	 //<와> 를 태그문자로 인식되지 않도록 하기위해
+	 //사용하는 키워드
+	 //< - &lt;
+	 //> - &gt;
+	 $mydiv.html("&lt;h1&gt;HTML&lt;/h1&gt;")
+	 //태그가 반영되지 않고 단순 텍스트로 처리된다
+	// $mydiv.text("<h1>text</h1>")
+ })
+ </script>
+</head>
+<body>
+<div id="mydiv">
+	<h1> jquery 테스트</h1>
+</div>
+</body>
+</html>

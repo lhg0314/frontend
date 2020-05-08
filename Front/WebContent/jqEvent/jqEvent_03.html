@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 $("#btnOk").on("click",function(){
+		 //alert("확인")
+		 //이벤트리스너 함수에서 this를 사용하면
+		 //이벤트가 발생한 객체를 지칭한다
+		 console.log(this)//js DOM
+		 console.log($(this))//jQuery DOM
+	 })
+	 //----------------------------------------
+	 $("#btnAlert").on("click",function(e){
+		 //이벤트 리스너 함수의 첫번째 인자는 발생한 이벤트 객체
+		 console.log(e)
+		 
+		 //-------------------------
+		 //이벤트 객체는 target프로미터를 가지고 있음
+		 //->target값은 이벤트가 발생한 객체
+		 console.log(e.target)
+		 //-------------------------
+		 $(this).html("<h1 style='color:red;'>clicked</h1>")
+		 
+		 $("#btnOk").click();
+		 $("#btnOk").trigger("click")
+	 })
+ })
+ </script>
+</head>
+<body>
+
+<div>
+   <button id="btnOk">확인</button>
+   <button id="btnAlert">알림</button>
+</div>
+
+</body>
+</html>

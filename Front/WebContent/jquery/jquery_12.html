@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 //class속성의 값 출력
+	 console.log($("div").attr("class"))
+	 
+	 //class속성의 값 지정하기
+	 //class속성은 attr()함수를 사용할 때 주의가 필요하다
+	 	
+	 $("div").attr("class","st4")
+	 $("div").attr("id","mydiv")
+	 $("div").attr("style","width:200px; height:300px;")
+	 
+	 //-----------------------------------
+	 
+	 //background를 일반속성으로 부여한다-배경색 적용되지 않음
+	 //style속성을 css()함수가 아닌 attr() 함수로 적용하는 실수
+	 $("p").eq(1).attr("background","tomato")
+	 //$("p").eq(1).attr("style","background:tomato") 이렇게 해야함 !!!
+	 
+	 $("p").eq(2).attr({
+		 "a":"1",
+		 "b":"2",
+		 "c":"3",
+		 "title":"테스트"
+	 })
+	 //attr() 함수는 배열로 매개변수 전달 불가
+	 //한번에 여러개 속성 불러올수 없음
+	 //console.log($("p").eq(2).attr(["a","b","c","title"]))
+	 
+	 //-------------------------------------------
+	 //모든 p태그에 "red" 클래스 추가
+	 $("p").addClass("red")
+	 
+	 $("p").eq(0).addClass("blue")
+	 
+	 $("p").eq(0).removeClass("red")
+	 
+	 //$("p")[0]->JS DOM 객체:에러
+	 
+	 //$("p")[0].addClass("red")
+	 
+	 //--------------------------------------------
+	 
+	 //인라인 방식으로 스타일 시트 적용-style속성
+	 $("div").css("border","1px solid blue")
+	 //임베디드 방식으로 스타일 시트 적용 -class속성
+	 $("div").addClass("borderGray")
+	 
+	 //------------------------------------------
+	 //class속성을 가지고있는 모든 p태그들
+	 $("p[class]").css("text-decoration","underline")
+	 //모든 클래스값 제거하기 class속성은 남아있고 값만 없어짐
+	 $("p[class]").removeClass()
+ })
+ </script>
+ <style type="text/css">
+ 
+ .red{color:red;}
+ .blue{color:blue;}
+ .borderGray{border:1px solid #ccc;}
+ 
+ </style>
+</head>
+<body>
+
+<div class="st1 st2 st3" style="width:300px ; height:200px; border:1px solid red;">
+<p>하나</p>
+<p>둘</p>
+<p>셋</p>
+
+</div>
+</body>
+</html>
+
