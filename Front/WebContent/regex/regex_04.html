@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 //--------jquery스타일로 이벤트 리스너 등록하기--------
+/* 	 $("#myform").on("submit",function(){
+		 
+	 })
+	 
+	 $("#myform").submit(function(){}) */
+	 
+	 //-------js 스타일로 이벤트 리스너 등록하기---------
+/* 	 myform.onsubmit=function(){}
+	 myform.addEventListener("submit",function(){}) */
+	 
+/* 	 $("#myform").submit(function(){
+		 console.log("submit 이벤트 발생")
+		 //이벤트의 동작을 중단시키는 코드- submit이 수행되지 않음
+		 return false
+		 
+		 //이벤트의 동작을 정상적으로 보내는 코드- submit이 수행됨
+		 return true
+	 }) */
+	 
+	//---------------------------------------
+	$("#myform").submit(function(){
+	var uidReg=/^[A-Z][A-Za-z0-9]{5,}$/
+	
+	if(!uidReg.test($("#uid").val())){
+		alert("아이디 잘 입력하세요")
+		$("#uid").val("")
+		$("#uid").focus()
+		
+		//---------------------------
+		//비밀번호 확인 창에 select 이벤트 발생시키기
+		// -> 내용을 선택한 채로 focus넘어감
+		//$("#upw_chk").select()
+		
+		return false
+	}
+	
+	var upwReg=/^[A-Za-z0-9]{6,}$/
+	if(!upwReg.test($("#upw").val())){
+		alert("비밀번호 잘 입력하세요")
+		$("#upw").val("")
+		$("#upw").focus()
+		return false
+	}
+	if( $("#upw").val()!=$("#upw_chk").val()){
+		alert("비밀번호가 일치하지 않습니다.")
+		$("#upw_chk").val("")
+		$("#upw_chk").focus()
+		return false
+	}
+	
+	})
+	
+	$("#btnComment").click(function(){
+		comment.style.display="inline-block"
+		$("#comment").show();
+		$("#comment").hide();//숨기기
+		$("#comment").toggle();//숨기기,보여지기 알아서
+	})
+ })
+ </script>
+</head>
+<body>
+<form action="#" id="myform" method="post">
+아이디<input type="text" name="uid" id="uid"><br>
+패스워드<input type="text" name="upw" id="upw"><br>
+패스워드 확인<input type="text" name="upw_chk" id="upw_chk"><br>
+<input type="submit" value="전송">
+</form>
+
+<hr>
+<button id="btnComment">자기소개</button><br><br>
+<textarea style="display:none;" rows="5" cols="50" id="comment"></textarea>
+</body>
+</html>

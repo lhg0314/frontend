@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var name="Hyo Jin"//단순 문자열
+var name2="Alice a Dana"
+
+var regex=/Hyo///정규식 리터럴
+//정규식.test("문자열")
+//Boolean을 반환
+//	true-정규식 패턴이 문자열에 포함되어있을 때
+//	false- 그렇지 않을때
+console.log(regex.test(name))
+console.log(regex.test(name2))
+console.log(/Dana/.test(name2))
+console.log(/a/.test(name2))
+
+//----------------------------------
+//정규식.exec("문자열")
+//배열-정규식 패턴으로 찾은 문자열
+//ㅜnull-찾는 패턴이 없을때
+
+console.log(regex.exec(name))
+console.log(regex.exec(name2))
+console.log(/a/.exec(name2))
+
+//-----------------------------------
+//"문자열".match(정규식)
+//배열 - 정규식 패턴으로 찾은 문자열
+// null - 찾는 패턴이 없을때
+console.log(name2.match(/a/))//기본매칭 ,처음꺼 매칭한다
+console.log(name2.match(/a/g))//전역 매칭, 전부다 매칭한다
+console.log(name2.match(/a/i))//대소문자 상관X
+console.log(name2.match(/a/gi))//대소문자 상관X,전부다
+
+// **g옵션(Flag)을 많이 사용한다
+</script>
+</head>
+<body>
+
+</body>
+</html>

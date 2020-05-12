@@ -10,16 +10,40 @@
  //전송누르면 alert띄우기
  //엔터누르면 alert띄우기
  $(document).ready(function(){
-	 var msg=$("input[name ~='msg']").attr("value")
+	 
 	 $("#btnSend").on("click",function(){
-		 var msg=$("input").val()
+		 var msg=$("input[name ~= 'msg']").val()
 		 alert(msg)
+		 $("input[name ~= 'msg']").val("")
 		 
 	 })
 	 
-	 $("input").on("Keydown",function(){
+	 $("input[name ~='msg']").on("keydown",function(key){
+		 console.log(key.keyCode)
 		 
-		 $("#btnSend").alert($("input").val())
+		 if(key.keyCode == 13){//키가 13이면 실행 엔터키는 13번
+	           
+			 console.log("enter키 눌림")
+			 $("#btnSend").click()
+		 
+		 	
+	       }
+		 
+	 })
+	 $("input[name ~='msg']").on("keydown",function(key){
+		 console.log("keydown")
+		 console.log(key.key)//입력한 문자
+		 console.log(key.keyCode)
+	 })
+	 $("input[name ~='msg']").on("keypress",function(key){
+		 console.log("keypress")
+		 console.log(key.key)
+		 console.log(key.keyCode)
+	 })
+	 $("input[name ~='msg']").on("keyup",function(key){
+		 console.log("keyup")
+		 console.log(key.key)
+		 console.log(key.keyCode)
 	 })
  })
  </script>
