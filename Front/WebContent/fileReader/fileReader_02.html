@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 $("#upload").change(function(e){
+		// console.log("파일 선택됨,change")
+ 		 //console.log(e)
+		 //console.log(e.target) 
+		 
+		 //선택한 파일들 변수
+		 var files=e.target.files;//FileList객체
+		 
+		 console.log(files)
+		 console.log(files.length)
+		 var num=files.length
+		 console.log(files[0])
+		 //if(files[0].type.split("/")[0] != "image")
+		 if(!files[0].type.includes("image")){
+			 alert("이미지가 아닙니다")
+			 e.target.value=null
+			 return false
+		 }
+		 //**File객체에는 파일의 정보가 들어있긴 하지만
+		 //해당 파일의 내용물 정보는 없다
+		 //-> FileReader 객체를 이용해 파일 내용을 읽어들여야한다
+		 
+		 console.log("------------------------")
+		 
+		 var reader=new FileReader();
+		 
+		 //File객체의 정보를 모두 읽어서 메모리에
+		 //적재한 이후 동작되도록 이벤트리스너 작성
+		 
+		 reader.onload=function(ev){
+			 console.log(ev)
+			 console.log(ev.target+"힣")
+			 console.log("------------------------")
+			 //for(int i=0;i<ev.length;i++){
+				 //console.log(i)
+			 //}
+			 console.log(ev.target.result+"힣")
+			 
+			 //이미지가 추가됨-좋지않음
+			 $("<img>").attr("src",ev.target.result).appendTo($("#preview"))
+			 
+			 $("#preview").html(
+					 $("<img>").attr({"src":ev.target.result,
+						 				"width":300,"height":200}))
+			 
+		 }//먼저 예약해야함
+		 
+		 //FiledReader 객체를 이용한 File 객체 정보 읽기
+		 //reader.readAsText(files[0])//텍스트 형식으로 읽기
+		 for(var i=0;i<num;i++){
+		 reader.readAsText(files[i])//blob 또는 File형식으로읽기
+		 }
+		 
+		 //reader.readAsDataURL(files)//blob 또는 File형식으로읽기
+		 
+		 
+		 
+	 })
+ })
+ </script>
+
+</head>
+<body>
+<!-- 단일 파일 선택 -->
+<!-- <input type="file" id="upload"> -->
+<!-- 다중 파일 선택 -->
+<input type="file" id="upload" multiple="multiple" >
+<div id="preview"></div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 
+	 $("#enrollform").submit(function(){
+		 
+	   var regex=/^[a-z0-9]{8,12}$/
+		 
+		 if(!regex.test($("#userid").val())){
+				 alert("영문자와 숫자로 8글자 이상 12글자 이하여야 합니다.")
+				 return false
+				 
+			 }
+		 if(!regex.test($("#userpwd").val())){
+				 alert("영문자와 숫자로 8글자 이상 12글자 이하로 입력하세요")
+				 return false
+				 
+			 }
+	    if($("#userpwd").val() != $("#pwdchk").val()){
+	    	alert("비밀번호가 일치하지 않습니다.")
+	    	return false
+	    }
+		 
+	 })
+	 
+	 $("#replybtn").click(function(){
+		 $("#reply").toggle()
+	 })
+ })
+ </script>
+</head>
+<body>
+<form id="enrollform" method="post" action=" memberenroll">
+<ul>
+<li>아이디<input type="text" id="userid"></li>
+<li>패스워드<input type="text" id="userpwd"></li>
+<li>패스워드 확인<input type="text" id="pwdchk"></li>
+<li>관심분야(java,html/css,javascript/jquery,데이터베이스 중 다수값이면 ,로 구분하여 작성)<br>
+<input type="text"  list="myinter" placeholder="java,html/css,javascript/jquery,데이터베이스 중 다수값이면 ,로 구분">
+<datalist id="myinter">
+<option>java</option>
+<option>html/css</option>
+<option>javascript/jquery</option>
+<option>데이터베이스</option>
+</datalist></li>
+<li>이메일<input type="email"></li>
+<li>지식정도(상,중,하로 작성)<select>
+<option>상</option>
+<option>중</option>
+<option>하</option>
+</select></li>
+<li>레벨:<select>
+<option>고수</option>
+<option>중수</option>
+<option>하수</option>
+</select> </li>
+<li>전화번호 <select>
+<option>010</option>
+<option>011</option>
+<option>016</option>
+<option>019</option>
+</select>-<input type="text">-<input type="text"> </li>
+<li><button>회원가입</button><input type="reset" value="취소"></li>
+</ul>
+</form>
+<button id="replybtn">댓글 등록</button><br>
+<br><textarea id="reply" style="display:none;"></textarea>  
+</body>
+</html>

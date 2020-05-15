@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" lang="kor">
+<title>회원가입</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 var regex=/^[a-z0-9]{4,}$/
+	 $("#userid").blur(function(){
+		 if(!regex.test($(this).val())){
+			 alert("4글자이상, 영문자 숫자만 가능")
+			 $(this).val("")
+			 $(this).focus()
+			 
+		 }
+	 })
+	 
+	 $("#userpwd").blur(function(){
+		 if(!regex.test($(this).val())){
+			 alert("4글자이상, 영문자 숫자만 가능")
+			 $(this).val("")
+			 $(this).focus
+		 }
+	 })
+	 
+	 $("#pw_chk").keydown(function(key){
+		 if(key.keyCode==13){
+			 if($(this).val()!=$("#userpwd").val()){
+				 alert("패스워드가 일치하지않습니다")
+				 $(this).select
+			 }
+		 }
+	 })
+	 $("#myinter").append("<option>java</option>")
+	 $("#myinter").append("<option>html/css</option>")
+	 $("#myinter").append("<option>javascript/jquery</option>")
+	 $("#myinter").append("<option>데이터베이스</option>")
+	 $("#interests").attr("multiple","multiple")
+	 
+	 var regemail = /^[0-9a-zA-Z]*@[0-9a-zA-Z]*\.[a-zA-Z]{2,3}$/
+	 
+	 $("#email").blur(function(){
+		 if(!regemail.test($(this).val())){
+			 alert("이메일 형식에 맞지않습니다")
+			 $(this).val("")
+		 }
+	 })
+	 var reglev=/^([1|2|3]?)$/
+	 $("#ilevel").blur(function(){
+		 if(!reglev.test($(this).val())){
+			 alert("상 중 하 로 구분되지 않았습니다.")
+		 }
+	 })
+	 var regphone1=/^01([0|1|6|9]?)$/
+	 var regphone2=/^([0-9]{3,4})$/
+	 var regphone3=/^([0-9]{4})$/
+	 $("#phone3").blur(function(){
+		 if(!regphone1.test($("#phone1").val()) || !regphone2.test($("#phone2").val())||!regphone3.test($("#phone3").val())){
+			 alert("전화번호 형식에 맞지않습니다.")
+		 }
+	 })
+			 
+ })
+ </script>
+</head>
+<body>
+아이디:<input type="text" name="userid" id="userid"><br>
+패스워드:<input type="text" name="userpwd" id="userpwd"><br>
+패스워드 확인:<input type="text" name="pw_chk" id="pw_chk"><br>
+관심분야:<input type="text" id="interests" name="interests" list="myinter" placeholder="선택하시오"><br>
+<datalist id="myinter" > 
+</datalist>
+이메일:<input type="text" id="email" name="email"><br>
+지식정도:<input type="range" min="1" max="3" step="1" id="ilevel" name="ilevel"><br>
+전화번호:<input type="text" id="phone1">-<input type="text" id="phone2">-<input type="text" id="phone3"><br>
+<input type="file" id="upfile" name="upfile"><br>
+<input type="submit" value="회원가입"> 
+<input type="reset" value="취소">
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript"
+ src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+	 
+	 $("tr").eq(1).click(function(){
+		 $(this).css({"color":"white","background-color":"red"})
+		 $("tr").eq(2).css({"color":"black","background-color":"white"})
+		 $("tr").eq(3).css({"color":"black","background-color":"white"})
+		 
+		 $("#s1").html($(this).children().eq(0).val())
+		 $("#s2").html($(this).children().eq(1).val())
+		 $("#s3").html($(this).children().eq(2).val())
+		 $("#s4").html($(this).children().eq(3).val())
+	 })
+	 $("tr").eq(2).click(function(){
+		 $(this).css({"color":"white","background-color":"red"})
+		 $("tr").eq(1).css({"color":"black","background-color":"white"})
+		 $("tr").eq(3).css({"color":"black","background-color":"white"})
+		 
+		 $("#s1").text($(this).children().eq(0).val())
+		 $("#s2").text($(this).children().eq(1).val())
+		 $("#s3").text($(this).children().eq(2).val())
+		 $("#s4").text($(this).children().eq(3).val())
+	 })
+	 $("tr").eq(3).click(function(){
+		 $(this).css({"color":"white","background-color":"red"})
+		 $("tr").eq(2).css({"color":"black","background-color":"white"})
+		 $("tr").eq(1).css({"color":"black","background-color":"white"})
+		 
+		 $("#s1").text($(this).children().eq(0).val())
+		 $("#s2").text($(this).children().eq(1).val())
+		 $("#s3").text($(this).children().eq(2).val())
+		 $("#s4").text($(this).children().eq(3).val())
+	 })
+ })
+ </script>
+ <style type="text/css">
+ 
+ td{border:1px solid black;}
+ th{border:1px solid black;}
+ 
+ </style>
+</head>
+<body>
+<table style="border:1px solid black;">
+	<tr >
+		<th>번호</th>
+		<th>제목</th>
+		<th>조회수</th>
+		<th>작성일자</th>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td>3번제목</td>
+		<td>0</td>
+		<td>11-07-13</td>
+	</tr>
+	<tr>
+		<td>2</td>
+		<td>2번제목</td>
+		<td>0</td>
+		<td>11-07-12</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>1번제목</td>
+		<td>0</td>
+		<td>11-07-11</td>
+	</tr>
+</table>
+선택된 행: <span id="s1">/</span>
+<span id="s2">/</span>
+<span id="s3">/</span>
+<span id="s4">/</span>
+</body>
+</html>
