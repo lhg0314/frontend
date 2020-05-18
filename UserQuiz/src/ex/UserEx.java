@@ -32,7 +32,7 @@ public class UserEx {
 		//	userId : A123
 		//	name : Alice
 		
-		User insertUser = null;
+		User insertUser = user;
 		userDao.insertUser(insertUser);
 		//-----------------
 		
@@ -47,11 +47,11 @@ public class UserEx {
 		
 		
 		//--- 유저 삭제 ---
-		//userDao.deleteByIdx(20);
+		userDao.deleteByIdx(20);
 				
 		// 유저 조회 - 삭제됐는지 확인하는 용도(null나와야함)
-		//User resultUser = (User) userDao.selectByIdx(20);
-		//System.out.println(resultUser);
+		User resultUser = (User) userDao.selectByIdx(20);
+		System.out.println(resultUser);
 		//-----------------
 	}
 }

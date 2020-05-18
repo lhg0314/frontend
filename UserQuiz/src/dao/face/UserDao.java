@@ -8,11 +8,11 @@ public interface UserDao {
 
 	public List<User> selectAll();
 	
-	public List<User> insertUser(User user);
+	public void insertUser(User user);
 	
 	public User selectByIdx(int idx);
 	
-	public List<User> deleteByIdx(int idx);
+	public void deleteByIdx(int idx);
 	
 
 }

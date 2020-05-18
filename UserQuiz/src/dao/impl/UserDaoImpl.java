@@ -89,11 +89,59 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public List<User> insertUser(User user) {//삽입
-		String sql="";
-		
-		return null;
-	}
+	   public void insertUser(User insertUser) {
+
+	      String sql = "";
+	      sql += "insert into userTest( idx, userid, name )";
+	      sql += " values (userTest_SQ.nextval, ?, ?)";
+	      //----------------
+	      
+	      try {
+	         
+	         ps = conn.prepareStatement(sql);
+	         ps.setString(1, insertUser.getUserid()); 
+	         ps.setString(2, insertUser.getName()); 
+	         ps.executeUpdate();
+	         
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         try {
+	            
+	            if(ps!=null)   ps.close();
+	            //-----------------
+	         } catch (SQLException e) {
+	            e.printStackTrace();
+	         }
+	      }
+	   }
+
+	   @Override
+	   public void deleteByIdx(int deleteIdx) {
+	      
+	      String sql = "";
+	      sql += "delete usertest";
+	      sql += " where idx = ?";
+	      //----------------
+	      
+	      try {
+	         ps = conn.prepareStatement(sql);
+	         
+	         ps.setInt(1, deleteIdx);
+	         
+	         ps.executeUpdate();
+	         //------------------------------
+	         
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         try {
+	            if(ps!=null)   ps.close();
+	         } catch (SQLException e) {
+	            e.printStackTrace();
+	         }
+	      }
+	   }
 
 	@Override
 	public User selectByIdx(int idx) {//찾기
@@ -121,7 +169,7 @@ public class UserDaoImpl implements UserDao {
 			try {
 				if(rs !=null)rs.close();
 				if(ps !=null)ps.close();
-				if(conn !=null)conn.close();
+				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -130,10 +178,6 @@ public class UserDaoImpl implements UserDao {
 		return user;
 	}
 
-	@Override
-	public List<User> deleteByIdx(int idx) {//삭제
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }
