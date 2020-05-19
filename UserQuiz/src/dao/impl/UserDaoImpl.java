@@ -89,7 +89,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	   public void insertUser(User insertUser) {
+	   public void insertUser(User user) {//삽입
 
 	      String sql = "";
 	      sql += "insert into userTest( idx, userid, name )";
@@ -99,8 +99,8 @@ public class UserDaoImpl implements UserDao {
 	      try {
 	         
 	         ps = conn.prepareStatement(sql);
-	         ps.setString(1, insertUser.getUserid()); 
-	         ps.setString(2, insertUser.getName()); 
+	         ps.setString(1, user.getUserid()); 
+	         ps.setString(2, user.getName()); 
 	         ps.executeUpdate();
 	         
 	      } catch (SQLException e) {
@@ -117,7 +117,7 @@ public class UserDaoImpl implements UserDao {
 	   }
 
 	   @Override
-	   public void deleteByIdx(int deleteIdx) {
+	   public void deleteByIdx(int idx) {
 	      
 	      String sql = "";
 	      sql += "delete usertest";
@@ -127,7 +127,7 @@ public class UserDaoImpl implements UserDao {
 	      try {
 	         ps = conn.prepareStatement(sql);
 	         
-	         ps.setInt(1, deleteIdx);
+	         ps.setInt(1, idx);
 	         
 	         ps.executeUpdate();
 	         //------------------------------
